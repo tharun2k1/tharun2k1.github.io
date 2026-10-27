@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tharunkumar Chandrasekaran – AI Software Engineer</title>
+<meta name="description" content="AI Software Engineer building LLM-powered applications, enterprise workflows and scalable backend services with Python, Django and AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8f9; --panel:#ffffff; --ink:#0f2230; --muted:#53636f; --soft:#7d8b96;
+  --line:#dde4e8; --blue:#0f766e; --tint:#e3f1ef; --green:#2fa36b;
+  --serif:"Sora","Segoe UI",system-ui,sans-serif;
+  --sans:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+
+/* nav: always visible */
+header.nav{position:sticky;top:0;z-index:10;background:rgba(246,248,249,.95);border-bottom:1px solid var(--line)}
+.nav .wrap{max-width:none;padding-left:40px;padding-right:40px;display:flex;justify-content:space-between;align-items:center;gap:12px 28px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.logo{font-family:var(--serif);font-weight:700;text-decoration:none;font-size:1.1rem;white-space:nowrap}
+.nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:.97rem;overflow-x:auto}
+.nav ul a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.nav ul a:hover{color:var(--blue)}
+
+h1,h2,h3{font-family:var(--serif);letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.6vw,2.2rem);font-weight:700;line-height:1.15;margin-bottom:30px;padding-left:16px;border-left:5px solid var(--blue)}
+
+section{padding:80px 0;border-top:1px solid var(--line)}
+main>section:nth-of-type(odd){background:#eaf0f2}
+main>section:nth-of-type(even){background:var(--bg)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;padding:72px 0 88px}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--tint);color:var(--blue);border-radius:8px;padding:6px 16px;font-size:.9rem;font-weight:600;margin-bottom:24px}
+.pill i{width:10px;height:10px;border-radius:50%;background:var(--green);display:block}
+.pill span{color:var(--blue)}
+.hero h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:10px}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--blue);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.caret{animation:none}}
+.role{min-height:1.7em;font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--blue);margin-bottom:18px}
+.hero p.lead{color:var(--muted);font-size:1.08rem;max-width:54ch;margin-bottom:22px}
+.highlights{display:block;color:var(--soft);font-size:.98rem;line-height:1.9;padding-top:22px;border-top:1px solid var(--line);margin-bottom:30px;max-width:60ch}
+.highlights span{display:inline-block;white-space:nowrap}
+.highlights span:not(:last-child)::after{content:"·";margin:0 9px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn:hover{border-color:var(--ink)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue)}
+
+/* photo */
+.photo-frame{position:relative;width:min(100%,340px);margin:0 auto}
+.photo-frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--tint);border:2px solid var(--blue);border-radius:20px}
+.pic{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#cfe6e2,#e9eef1);display:grid;place-items:center;border:1px solid var(--line)}
+.pic span{font-family:var(--serif);font-weight:800;font-size:4.2rem;color:var(--blue);opacity:.6}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.loc{position:absolute;left:16px;bottom:16px;background:var(--panel);border-radius:8px;padding:5px 12px;font-size:.85rem;font-weight:600}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:none}
+.about .col p+p{margin-top:16px}
+.about p{color:var(--muted)}
+.about strong{color:var(--ink);font-weight:700;background:linear-gradient(transparent 60%,var(--tint) 60%)}
+
+/* education */
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edu-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px}
+.edu-card .when{color:var(--soft);font-size:.9rem;font-weight:500}
+.edu-card h3{font-size:1.35rem;font-weight:700;margin:8px 0 6px;line-height:1.2}
+.edu-card .org{color:var(--muted)}
+.edu-card .gpa{display:inline-block;margin-top:16px;border:1px solid var(--line);border-radius:999px;padding:3px 14px;font-size:.9rem;color:var(--blue);font-weight:600}
+
+/* skills */
+.skill{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.skill h3{font-size:1.1rem;font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px 14px;font-size:.92rem}
+
+/* experience: date | line | details */
+.tl{position:relative;display:grid;gap:44px}
+.tl{--dcol:235px}
+.tl::before{content:"";position:absolute;left:calc(var(--dcol) + 21px);top:8px;bottom:0;width:2px;background:var(--line)}
+.job{position:relative;display:grid;grid-template-columns:var(--dcol) 1fr;column-gap:44px;align-items:start}
+.job::before{content:"";position:absolute;left:calc(var(--dcol) + 16px);top:9px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--tint)}
+.job .when{grid-column:1;text-align:right;color:var(--blue);font-weight:700;font-size:.92rem;line-height:1.5;padding-top:4px;white-space:nowrap}
+.job .body{grid-column:2}
+.job h3{font-size:1.35rem;font-weight:700;margin:0 0 6px;line-height:1.25}
+.org{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:12px}
+.org .co{font-weight:700;color:var(--ink);background:var(--tint);border-radius:6px;padding:2px 10px}
+.org .city{display:inline-flex;align-items:center;gap:5px;color:var(--soft);font-size:.92rem}
+.org .city svg{color:#e11d48;flex:none}
+.job ul{padding-left:20px;max-width:78ch;color:var(--muted)}
+.job li+li{margin-top:6px}
+
+/* projects */
+.proj{display:grid;grid-template-columns:1fr 1.6fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.proj:first-of-type{padding-top:0}
+.proj h3{font-size:1.35rem;font-weight:700;margin-bottom:6px;line-height:1.2}
+.proj .sub{color:var(--soft)}
+.proj p{color:var(--muted);max-width:62ch}
+.proj .tags{margin-top:14px}
+.links{margin-top:14px;font-weight:600}
+.links a.gh{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--ink)}
+.links a.gh:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* contact */
+.contact p{max-width:56ch;color:var(--muted);margin-bottom:26px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--soft);font-size:.9rem}
+
+@media(max-width:820px){
+  .hero,.proj,.duo-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:16px}
+  .edu{grid-template-columns:1fr}
+  .photo-frame{order:-1;width:min(66%,260px);margin-bottom:24px}
+  .skill{grid-template-columns:1fr;gap:8px}
+  .tl{padding-left:28px;gap:36px}
+  .tl::before{left:5px}
+  .job{grid-template-columns:1fr}
+  .job::before{left:-29px;top:6px}
+  .job .when{grid-column:1;text-align:left;padding-bottom:4px}
+  .job .body{grid-column:1}
+  .nav .wrap{padding-left:20px;padding-right:20px}
+  .nav ul{gap:20px;width:100%;font-size:.93rem;padding-bottom:2px}
+}
+@media(max-width:560px){.highlights span{white-space:normal}.job .when{white-space:normal}}
+html{scroll-behavior:auto}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Tharunkumar Chandrasekaran</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="pill"><i></i>Available for full-time roles</div>
+      <h1>Hello, I’m<br>Tharunkumar.</h1>
+      <p class="role" aria-label="AI Software Engineer"><span id="typed">AI Engineer</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="lead">I’m an AI Software Engineer passionate about building intelligent AI applications, scalable data pipelines, and automated workflows, with a focus on LLMs, RAG, AI agents, and transforming complex data into real-world solutions.</p>
+      <div class="highlights">
+        <span>M.S. Data Science · University of Maryland</span>
+        <span>3+ Years of Industry Experience</span>
+        <span>Former Software Engineer at Freshworks</span>
+        <span>Data analytics intern at GNY</span>
+        <span>Open to AI &amp; Data Engineering Roles</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="Resume Tharunkumar Chandrasekaran.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="photo-frame">
+      <div class="pic">
+        <span aria-hidden="true">TC</span>
+        <!-- Save your photo as photo.jpg in the same folder -->
+        <img src="Tharunkumar Chandrasekaran.png" alt="Photo of Tharunkumar Chandrasekaran" onerror="this.remove()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About Me</h2>
+  <div class="about">
+    <div class="col">
+    <p>I’m an <strong>AI Software Engineer</strong> with <strong>3+ years of industry experience</strong> building scalable applications, enterprise systems, and data-driven solutions. At <strong>Freshworks</strong>, I worked on backend development, API integrations, and workflow automation to enhance enterprise SaaS products.</p>
+    <p>I hold a <strong>Master’s in Data Science</strong> from the <strong>University of Maryland</strong>, where I expanded my expertise in AI engineering, LLM-powered applications, and data engineering. During my internship at <strong>Greater New York Insurance</strong>, I developed data pipelines, performed risk analysis, and built interactive dashboards to deliver actionable insights.</p>
+    </div>
+    <div class="col">
+    <p>Currently, I’m an <strong>AI Software Engineer</strong> at <strong>Jansy Packaging</strong>, developing enterprise ERP solutions and AI-powered applications to automate business workflows and improve operational efficiency.</p>
+    <p>My interests lie in <strong>Generative AI</strong>, <strong>RAG</strong>, <strong>AI Agents</strong>, and <strong>Data Engineering</strong>, with a focus on building scalable, intelligent systems that solve real-world problems. I’m passionate about exploring emerging technologies, solving complex challenges, and transforming innovative ideas into practical, impactful solutions.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="edu-card">
+      <div class="when">August 2024 – May 2026</div>
+      <h3>Master of Science in Data Science</h3>
+      <div class="org">University of Maryland, College Park, USA</div>
+      <span class="gpa">GPA 3.8 / 4</span>
+    </div>
+    <div class="edu-card">
+      <div class="when">September 2018 – June 2022</div>
+      <h3>Bachelor’s in Computer Science and Engineering</h3>
+      <div class="org">Rajalakshmi Engineering College, Chennai, India</div>
+      <span class="gpa">GPA 3.7 / 4</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div>
+    <div class="skill"><h3>Languages</h3><div class="tags"><span>Python</span><span>Java</span><span>SQL</span><span>TypeScript</span><span>R</span></div></div>
+    <div class="skill"><h3>AI and automation</h3><div class="tags"><span>LLM API integration</span><span>Prompt engineering</span><span>LangChain</span><span>Anthropic Claude API</span><span>TensorFlow</span></div></div>
+    <div class="skill"><h3>Backend and integration</h3><div class="tags"><span>Django</span><span>REST APIs</span><span>ERP applications</span><span>Data pipelines</span><span>ETL/ELT</span></div></div>
+    <div class="skill"><h3>Data and orchestration</h3><div class="tags"><span>Apache Spark</span><span>Apache Airflow</span><span>HDFS</span><span>Snowflake</span><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span></div></div>
+    <div class="skill"><h3>Cloud and DevOps</h3><div class="tags"><span>AWS (S3, Glue, Lambda)</span><span>Azure</span><span>Docker</span><span>Kubernetes</span><span>GitHub Actions</span><span>Linux</span><span>Git</span></div></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="job">
+      <div class="when">June 2026 – Present</div>
+      <div class="body"><h3>AI Software Engineer</h3>
+      <div class="org"><span class="co">Jansy Packaging</span><span class="city"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 0-5.5 5.5C2.5 9.6 8 16 8 16s5.5-6.4 5.5-10.5A5.5 5.5 0 0 0 8 0zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>Englewood Cliffs, New Jersey</span></div>
+      <ul>
+        <li>Developed enterprise ERP modules for sales budgeting and manufacturing inspections using Django, Vue.js and REST APIs.</li>
+        <li>Built backend APIs and data workflows for budgeting, inspections and operational reporting in Slate ERP.</li>
+        <li>Created an AI Inspection Assistant that analyzes inspection data and generates inspection reports automatically.</li>
+      </ul></div>
+    </div>
+    <div class="job">
+      <div class="when">September 2025 – May 2026</div>
+      <div class="body"><h3>Graduate Research Assistant</h3>
+      <div class="org"><span class="co">Digital Engagement Lab, University of Maryland</span><span class="city"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 0-5.5 5.5C2.5 9.6 8 16 8 16s5.5-6.4 5.5-10.5A5.5 5.5 0 0 0 8 0zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>College Park, Maryland</span></div>
+      <ul>
+        <li>Researched digital engagement and attention patterns across short-form media.</li>
+        <li>Built an AI-powered news summarization platform with Next.js and TypeScript, using the Anthropic Claude API for content extraction, summarization and analysis.</li>
+      </ul></div>
+    </div>
+    <div class="job">
+      <div class="when">June 2025 – August 2025</div>
+      <div class="body"><h3>Data Analytics Intern</h3>
+      <div class="org"><span class="co">Greater New York Insurance</span><span class="city"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 0-5.5 5.5C2.5 9.6 8 16 8 16s5.5-6.4 5.5-10.5A5.5 5.5 0 0 0 8 0zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>New York City, New York</span></div>
+      <ul>
+        <li>Built Python and SQL pipelines to ingest, transform and analyze large NYC 311 datasets for risk hotspot analysis.</li>
+        <li>Designed SQL workflows for extraction, validation and feature engineering, improving data quality and model readiness.</li>
+        <li>Developed a Snowflake data platform and Django application that deliver risk insights through interactive dashboards.</li>
+      </ul></div>
+    </div>
+    <div class="job">
+      <div class="when">March 2022 – August 2024</div>
+      <div class="body"><h3>Software Engineer</h3>
+      <div class="org"><span class="co">Freshworks</span><span class="city"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 0a5.5 5.5 0 0 0-5.5 5.5C2.5 9.6 8 16 8 16s5.5-6.4 5.5-10.5A5.5 5.5 0 0 0 8 0zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>Chennai, India</span></div>
+      <ul>
+        <li>Migrated enterprise onboarding workflows and business rules to a multi-workspace architecture for scalable workflow automation.</li>
+        <li>Revamped Freshservice user profiles and updated REST API endpoints to stay compatible through the API v1 deprecation.</li>
+        <li>Built GitHub Actions CI/CD pipelines for automated testing and containerized deployments, and developed employee off-boarding workflows. Regression test pass rate rose from 72% to 96%.</li>
+      </ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+
+  <article class="proj">
+    <div><h3>Smart Story Suite</h3><p class="sub">AI news summarization platform</p></div>
+    <div>
+      <p>A Next.js and TypeScript platform that pulls in news articles through REST APIs and turns them into structured insights. The Anthropic Claude API generates summaries, highlights and article scores, shown with real-time visualization.</p>
+      <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Claude API</span></div>
+      <p class="links"><a class="gh" href="https://github.com/YOUR-USERNAME/smart-story-suite" target="_blank" rel="noopener" aria-label="View source code on GitHub" title="View on GitHub"><svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></p>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div><h3>NYC 311 Risk Hotspot Analysis</h3><p class="sub">End-to-end data pipeline</p></div>
+    <div>
+      <p>Ingests, cleans and analyzes large-scale NYC 311 data to find risk hotspots. Optimized SQL workflows and a Snowflake and Django platform handle validation, feature engineering and interactive risk dashboards.</p>
+      <div class="tags"><span>Python</span><span>SQL</span><span>Snowflake</span><span>Django</span></div>
+      <p class="links"><a class="gh" href="https://github.com/YOUR-USERNAME/nyc-311-risk-analysis" target="_blank" rel="noopener" aria-label="View source code on GitHub" title="View on GitHub"><svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></p>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div><h3>Bitcoin Price Prediction Pipeline</h3><p class="sub">Real-time streaming and forecasting</p></div>
+    <div>
+      <p>A real-time Apache Spark pipeline, run in Docker, that ingests Bitcoin prices from the CoinGecko API and computes moving-average metrics. Processing and storage run on AWS (EC2, S3) with InfluxDB, and NeuralProphet forecasts price trends.</p>
+      <div class="tags"><span>Apache Spark</span><span>Docker</span><span>AWS</span><span>NeuralProphet</span><span>InfluxDB</span></div>
+      <p class="links"><a class="gh" href="https://github.com/YOUR-USERNAME/bitcoin-price-prediction" target="_blank" rel="noopener" aria-label="View source code on GitHub" title="View on GitHub"><svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></p>
+    </div>
+  </article>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p>I’m looking for AI Engineer, Data Engineer and Software Engineer roles. Email is the fastest way to reach me.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:tharun2k1@gmail.com">tharun2k1@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/tharunkumar-chandrasekaran-681816213/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/tharun2k1" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Tharunkumar Chandrasekaran</div></footer>
+<script>
+(function(){
+  var roles=["AI Engineer","Building Intelligent Systems","Turning Data into Intelligence"];
+  var el=document.getElementById('typed');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){return;}
+  var r=0,c=roles[0].length,del=true;
+  (function tick(){
+    var word=roles[r];
+    el.textContent=word.slice(0,c);
+    if(!del&&c===word.length){del=true;return setTimeout(tick,2000);}
+    if(del&&c===0){del=false;r=(r+1)%roles.length;}
+    c+=del?-1:1;
+    setTimeout(tick,del?35:70);
+  })();
+})();
+</script>
+</body>
+</html>
